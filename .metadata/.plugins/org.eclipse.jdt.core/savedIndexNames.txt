@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\projetos\projetoDecoder\.metadata\.plugins\org.eclipse.jdt.core
+1489336493.index
+1865797976.index
+1163428715.index
+3729101479.index

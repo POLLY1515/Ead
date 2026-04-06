@@ -24,7 +24,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
 @Table(name="TB_USERS")
-public class userModel implements Serializable {
+public class UserModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -61,3 +61,4 @@ public class userModel implements Serializable {
 
 
 }
+

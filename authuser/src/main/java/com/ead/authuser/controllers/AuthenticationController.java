@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ead.authuser.dtos.UserDTO;
+import com.ead.authuser.dtos.UserDto;
 import com.ead.authuser.enuns.UserStatus;
 import com.ead.authuser.enuns.UserType;
 import com.ead.authuser.models.UserModel;
 import com.ead.authuser.services.UserService;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,7 +31,8 @@ public class AuthenticationController {
 	
 	
 	@PostMapping("/signup")
-	public ResponseEntity<Object> registerUser(@RequestBody UserDTO userDto){
+	public ResponseEntity<Object> registerUser(@RequestBody @JsonView(UserDto.UserView.RegistrationPost.class)
+			UserDto userDto){
 		if(userService.existsByUserName(userDto.getUserName())) {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body("Error: Username is Already Taken!");
 		}
